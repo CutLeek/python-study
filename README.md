@@ -1,2 +1,2 @@
 # python-study
-this is the first project of mine
+this is the basic python project that I study everyday
