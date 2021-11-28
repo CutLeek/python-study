@@ -38,4 +38,16 @@ if a1 >=10 and a2 >=10:
     print(a2)
 print("------------------------------------------")
 
-#位运算符
+#位运算符  &与 |或 ~取反 ^异或 <<左移 >>右移
+a=23
+a = print(bin(a))
+b=0b1010110
+print(int(b))
+c=-2
+print(bin(-2))
+print('--------------------')
+#三目运算符 格式：结果 if 表达式 else 结果
+a,b=1,2
+result = (a+b) if a>b else (a-b)
+print(result)
+
