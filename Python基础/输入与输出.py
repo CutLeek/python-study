@@ -1,10 +1,4 @@
-#变量的赋值
-test1=10
-test2=20
 
-#交换test1和test2的值
-test1,test2=test2,test1
-print(test1,test2)
 
 #print输出普通字符串
 print("hello world")
