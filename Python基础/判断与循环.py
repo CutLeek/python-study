@@ -75,5 +75,8 @@ for a in range(1,10):
     print()
 
 
-
+#paas、continue、break的区别：
+#paas就是用来占位，没什么作用
+#continue就是跳出此次循环，继续下一次的循环
+#break直接跳出循环，不再进行循环了
 
