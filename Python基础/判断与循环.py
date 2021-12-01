@@ -45,14 +45,34 @@ while i<=20:
 print(sum)
 
 #嵌套循环
+"""打印三角形"""
+for i in range(1,8):
+    print(i,"*"*i)
+print("------------------")
+"""以下代码为嵌套的实现方式，了解思路，在这里不可取"""
+n = 1
+while n <= 5:
+    count = 1
+    while count <= n:
+        print("*",end='')
+        count+=1
+    print()
+    n+=1
 
+"""打印九九乘法表"""
+a=1
+while a <= 9:
+    b=1
+    while b <= a:
+        print("{}*{}={} ".format(b,a,b*a),end='')
+        b+=1
+    print()
+    a+=1
 
-
-
-
-
-
-
+for a in range(1,10):
+    for b in range(1,a+1):
+        print("{}*{}={} ".format(b, a, b * a), end='')
+    print()
 
 
 
