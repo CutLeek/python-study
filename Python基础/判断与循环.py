@@ -23,3 +23,37 @@ for i in range(1,10):
 
 
 #while循环
+i = 0
+while i <=10:
+    print(i)
+    i +=1
+
+"""打印1-30之间所有的3的倍数且是5的倍数"""
+i=1
+while i<=30:
+    if i%3==0 and i%5==0:
+        print(i)
+    i+=1
+
+
+"""使用while循环计算1-20的所有数的和"""
+i=1
+sum=0
+while i<=20:
+    sum +=i
+    i+=1
+print(sum)
+
+#嵌套循环
+
+
+
+
+
+
+
+
+
+
+
+

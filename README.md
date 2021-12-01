@@ -102,3 +102,9 @@ vim ~/.pip/pip.conf
 index-url = https://mirrors.aliyun.com/pypi/simple
 ```
 
+换yum源
+
+`wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo`
+
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+
