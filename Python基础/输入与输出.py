@@ -15,6 +15,8 @@ this is the "second" line
 
 
 #格式化的输出
+test1=10
+test2=20
 print("变量a的值是:%s,变量test1的值是:%s" % (a,test1))
 print("{}比9大".format(a))
 print("{1}比1大，{0}比20小".format(test1,test2))
