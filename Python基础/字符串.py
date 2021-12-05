@@ -100,6 +100,19 @@ for i in s2:
     s1=s1.replace(i,"")
 print(s1)
 
+#练习：循环提示用户输入用户名、密码、邮箱，且不能超过20个字符，如果用户输入q，则退出
+while True:
+    username=input("请输入用户名：")
+    password=input("请输入密码：")
+    mail=input("请输入邮箱：")
+    if "q" ==username or "q"==password or "q"==mail:
+        break
+    elif len(username) >20 or len(password)>20 or len(mail)>20:
+        print("字符串长度不能超过20")
+        continue
+    else:
+        print("")
+        break
 
 
 
