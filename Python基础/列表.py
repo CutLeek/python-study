@@ -62,9 +62,15 @@ print(d)
 
 #练习：值班表的排列
 zhiban=["zhangsan","lisi",'wangermazi']
-for i in range(0,30):
+for i in range(30):
     name2=zhiban.pop(0)
     zhiban.append(name2)
     print("第{}天的值班顺序是{}".format(i+1,zhiban))
 
-
+#列表的相关运算符
+lista=[1,2,3]
+listb=[4,5,6]
+listc=lista * 2     #乘法，代表listc中的元素是lista重复了两次
+listd=lista+listb   #加法，代表了列表的拼接
+print(listd)
+print(listc)
