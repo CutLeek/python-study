@@ -11,7 +11,7 @@ print(name)
 print("jin这个字符串在列表name中的索引值为{}".format(name.index("jin")))
 
 #列表的删除操作
-name.remove("shen")        #删除指定元素
+name.remove("shen")        #删除指定元素,且只删除第一个
 print(name)
 name1=name.pop(0)       #根据索引来删除列表中的元素，并且返回删除的值，默认删除最后一个元素
 
@@ -74,3 +74,11 @@ listc=lista * 2     #乘法，代表listc中的元素是lista重复了两次
 listd=lista+listb   #加法，代表了列表的拼接
 print(listd)
 print(listc)
+
+#冒泡排序
+listaaaa=[1,23,435,473,12,324,4,234,562,123]
+for i in range(len(listaaaa)):
+    for j in range(len(listaaaa)-i-1):
+        if listaaaa[j+1] < listaaaa[j]:
+            listaaaa[j],listaaaa[j+1]=listaaaa[j+1],listaaaa[j]
+print(listaaaa)
