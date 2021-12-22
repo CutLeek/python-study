@@ -13,3 +13,4 @@ print(*c)
 #拆，狠狠的拆
 test='asdklfjakfja'
 print(*test)
+print(tuple(sorted(tuple2)))
