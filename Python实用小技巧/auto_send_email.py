@@ -1,29 +1,36 @@
 #不理解发邮件为什么会用到pandas，发邮件这个功能有待优化
+#邮箱授权码：TWQVJPRXXDLIUTIH
 
-import smtplib
-from email.message import EmailMessage
-import pandas as pd
+from smtplib import SMTP_SSL
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.header import Header
 
-def send_email(remail, rsubject, rcontent):
-    email = EmailMessage()                          ## Creating a object for EmailMessage
-    email['from'] = 'The Pythoneer Here'            ## Person who is sending
-    email['to'] = remail                            ## Whom we are sending
-    email['subject'] = rsubject                     ## Subject of email
-    email.set_content(rcontent)                     ## content of email
-    with smtplib.SMTP(host='smtp.gmail.com',port=587)as smtp:
-        smtp.ehlo()                                 ## server object
-        smtp.starttls()                             ## used to send data between server and client
-        smtp.login("deltadelta371@gmail.com","delta@371") ## login id and password of gmail
-        smtp.send_message(email)                    ## Sending email
-        print("email send to ",remail)              ## Printing success message
+# smtplib模块主要负责发送邮件：是一个发送邮件的动作，连接邮箱服务器，登录邮箱，发送邮件（有发件人，收信人，邮件内容）。
+# email模块主要负责构造邮件：指的是邮箱页面显示的一些构造，如发件人，收件人，主题，正文，附件等。
 
+def send_message(content):
+    host_server = 'smtp.163.com'  #163邮箱smtp服务器
+    sender = 'kirobot@163.com' #发件人邮箱
+    pwd = 'TWQVJPRXXDLIUTIH'
+    receiver = ['s17865563709@163.com']#收件人邮箱
+    mail_title = 'Python自动发送的邮件' #邮件标题
+    #mail_content = "自动发送邮件测试" #邮件正文内容
+    #函数调用时，mail_content=content
+
+    # 初始化一个邮件主体
+    msg = MIMEMultipart()
+    msg["Subject"] = Header(mail_title,'utf-8')
+    msg["From"] = sender
+    msg['To'] = ";".join(receiver)
+    msg.attach(MIMEText(mail_content,'plain','utf-8'))  # 邮件正文内容
+
+    smtp = SMTP_SSL(host_server) # ssl登录
+    smtp.login(sender,pwd)
+    # as_string()是将msg(MIMEText对象或者MIMEMultipart对象)变为str。
+    smtp.sendmail(sender,receiver,msg.as_string())
+
+    # quit():用于结束SMTP会话。
+    smtp.quit()
 if __name__ == '__main__':
-    df = pd.read_excel('list.xlsx')
-    length = len(df)+1
-
-    for index, item in df.iterrows():
-        email = item[0]
-        subject = item[1]
-        content = item[2]
-
-        send_email(email,subject,content)
+    send_message()
