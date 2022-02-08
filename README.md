@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # python-study
 this is the first project of mine
 
@@ -108,3 +109,7 @@ index-url = https://mirrors.aliyun.com/pypi/simple
 
 wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
 
+=======
+# python-study
+this is the basic python project that I study everyday
+>>>>>>> 90f8d665abdccb8dc4db6cc43cb148775d9eb37a
