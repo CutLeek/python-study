@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+
+import argparse
+parser = argparse.ArgumentParser(description="used for test")
+
+#查看版本，可选参数
+
+parser.add_argument('-v','--version',action='version',version='%(prog)s version : v 0.01',help='show the version')
+parser.add_argument('-t','--test',dest='test',help='this is the aa')  #nargs - 指定这个参数后面的value有多少个,+表示至少一个,?表示一个或0个
+parser.add_argument('-z', choices=['a', 'b', 'd'],type=str)  #required=True的意思是不能后面什么参数都不跟，至少也要有个-z
+
+args = parser.parse_args()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
