@@ -14,7 +14,7 @@ def add(args):
     sum = args.a + args.b
     print(sum)
 
-subparsers = parser.add_subparsers(help='following is the test')
+subparsers = parser.add_subparsers()
 #添加子命令 add
 parser_a = subparsers.add_parser('add', help='Calculate the sum of two numbers,you can run "python3 %(prog)s add --help" for more information.')
 parser_a.add_argument('-a', type=int, help='set the a value')
