@@ -1,0 +1,21 @@
+def func():
+    n = 100
+    list1 = [1,2,3,4]
+
+    def inner_func():
+        for i in list1:
+            print(i)
+    inner_func()
+func()
+
+#-------------------------------------函数的闭包------------------------------------------------
+#闭包的特点：1、有内部函数 2、外部函数return内部函数名 3、内部函数引用了外部函数的变量
+
+def func1():
+    a = 100
+    def inner_func1():
+        b=99
+        print(a,b)
+    return inner_func1
+x=func1()
+x()
