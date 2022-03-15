@@ -7,7 +7,7 @@ DATE_FORMAT = '%Y-%m-%d  %H:%M:%S'                                              
 logging.basicConfig(level=logging.DEBUG,
                     format=LOG_FORMAT,
                     datefmt = DATE_FORMAT ,
-                    filename="/tmp/test.log"                                     #有了filename参数就不会直接输出显示到控制台，而是直接写入文件
+                    #filename="/tmp/test.log"                                     #有了filename参数就不会直接输出显示到控制台，而是直接写入文件
                     )
 logging.debug("debug_msg")
 logging.info("info_msg")
