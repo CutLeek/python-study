@@ -36,4 +36,58 @@ stream.close()
 import os
 print(os.path.dirname(__file__))
 
+#isabs 判断是否为绝对路径
+print(os.path.isabs('test.txt'))
+
+#1.返回操作系统类型值为：posix，是Linux操作系统
+print(os.name)
+print('Linux' if os.name == 'posix' else 'Windows')
+
+#2.操作系统的详细信息  ，在Linux用的
+# info = os.uname()
+# print(info)
+# print(info.sysname)
+# print(info.nodename)
+
+#3.系统的环境变量
+print(os.environ)
+
+#4.通过key值获取环境变量对应的value值
+
+
+#5.判断是否为绝对路径 /tmp/passwd data.txt
+print(os.path.isabs('/tmp/passwd3'))
+print(os.path.isabs('hello'))
+
+#6.生成绝对路径
+print(os.path.abspath('hello.png'))
+print(os.path.join('/home/kiosk','hello.png'))
+print(os.path.join(os.path.abspath('.'),'hello.png'))    # 三种方法任选其一
+
+#7.获取目录名或文件名
+filename = '/home/kiosk/PycharmProjects/20181117/day09/hello.png'
+print(os.path.basename(filename))                        # 获取文件名
+print(os.path.dirname(filename))                         # 获取目录名
+
+#8.新建目录
+os.makedirs('img/file1/file2')  # 递归建立目录
+os.mkdir('hello')  		# 建立目录
+os.rmdir('hello')   		# 删除目录
+# 不能递归删除目录
+
+
+#9.创建文件 删除文件
+os.mknod('ok.txt')
+os.remove('ok.txt')
+
+#10.文件重命名（mv）
+os.rename('ok.txt','yes.txt')
+
+#11.判断文件或目录是否存在
+print(os.path.exists('ips.txt'))
+
+#12.分离后缀名和文件名
+print(os.path.splitext('hello.png'))
+
+
 
