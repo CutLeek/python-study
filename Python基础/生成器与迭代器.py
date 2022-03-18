@@ -46,3 +46,6 @@ while True:
         next(g2)
     except Exception as e:
         break
+
+#迭代器：能用next获取下一个元素的，就是迭代器，生成器是一种特殊的迭代器
+#可以通过iter()函数将可迭代对象变成迭代器
