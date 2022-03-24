@@ -85,3 +85,29 @@ class Person:
 
 Person.update_age()
 Person.test()
+
+
+# 魔术方法
+
+class Magic:
+    def __init__(self, name):
+        print('I am init')
+        self.name = name
+
+    def __new__(cls, *args, **kwargs):  # 有__new__的时候，会先执行__new__，而不是去执行__init__
+        print('I am new')
+        return super(Magic, cls).__new__(cls)  # 加上这一句话，执行完__new__之后就去执行__init__了
+
+    def __call__(self, *args, **kwargs):  # __call__这个方法就是让对象像函数一样
+        print('I am call', *args)
+
+    def __del__(self):  # 这个类没有对应实例了，或者程序跑完了，就会执行del，建议不要用
+        print('I am del,程序跑完，我就结束了红红火火恍恍惚惚')
+
+    def __str__(self):  # 有了这个方法，打印对象名的时候，就不是返回一个地址了，而是看你返回了什么
+        return self.name
+
+
+p = Magic('aa')
+print('__self__方法的作用：',p)
+p('akd')  # 这里就用到__call__了，直接调用的，而不是p.__call__的形式
